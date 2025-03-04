@@ -1,33 +1,56 @@
 {
-  "name": "react",
-  "version": "0.0.0",
-  "private": true,
+  "name": "react-notion-table",
+  "version": "0.1.0",
+  "description": "Редактируемые таблицы в стиле Notion для React",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "style": "dist/style.css",
+  "files": [
+    "dist"
+  ],
+  "private": false,
   "dependencies": {
     "@popperjs/core": "^2.0.0",
     "clsx": "1.1.1",
-    "faker": "^5.5.3",
     "immutability-helper": "^3.1.1",
-    "react": "17.0.2",
     "react-contenteditable": "^3.3.5",
-    "react-dom": "17.0.2",
     "react-popper": "^2.2.5",
     "react-table": "7.7.0",
     "react-window": "^1.8.6"
   },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
-    "prepare": "husky install",
-    "lint": "prettier --check . && eslint src/**/*.jsx",
-    "format": "prettier --write ."
+    "build": "rollup -c",
+    "prepare": "husky install && npm run build",
+    "lint": "prettier --check . && eslint src/**/*.{ts,tsx}",
+    "format": "prettier --write .",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.0.0",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^8.3.2",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-table": "^7.7.0",
+    "@types/react-window": "^1.8.5",
     "@vitejs/plugin-react": "^3.0.0",
     "eslint": "^8.30.0",
     "eslint-config-react-app": "^7.0.1",
     "husky": "^6.0.0",
+    "postcss": "^8.4.14",
     "prettier": "^2.3.1",
+    "rollup": "^2.75.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^4.7.2",
     "vite": "4.x",
     "vite-plugin-eslint": "^1.8.1"
   },
@@ -53,5 +76,18 @@
     "hooks": {
       "pre-commit": "echo \"[Husky] pre-commit\""
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/user/react-notion-table"
+  },
+  "keywords": [
+    "react",
+    "notion",
+    "table",
+    "editable",
+    "data-grid"
+  ],
+  "author": "",
+  "license": "MIT"
 }
