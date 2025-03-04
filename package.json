@@ -1,7 +1,7 @@
 {
   "name": "react-notion-table",
-  "version": "0.1.0",
-  "description": "Редактируемые таблицы в стиле Notion для React",
+  "version": "0.1.1",
+  "description": "React Notion Table is a flexible and modern editable table library for React, inspired by Notion, with full TypeScript support",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
